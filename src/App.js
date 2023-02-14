@@ -1,55 +1,30 @@
-import logo from './logo.svg';
+import { useState} from "react";
+import Header from "./components/Header";
+import CartList from "./components/CartList";
+import Home from "./components/pages/Home";
+import Store from "./components/pages/Store";
+import About from "./components/pages/About";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
-import { productsArr } from './Component/Item/ProductList';
-import React, { useState } from 'react';
-import CartElements from './Component/Cart/CartElements';
-import ColorSchemesExample from './Component/Button/Navbar';
-import CartButton from './Component/Button/CartButton';
-import './ProductList.css'
+const App = () => {
+  const [showCart, setShowCart] = useState(false);
 
+  const handleShow = (value) => {
+    setShowCart(value);
+  };
 
+  return (
+    <div>
+      <Header handleShow={handleShow} />
 
-
-
-
-
-
-const App =()=>{
-  const [showcart,setshowcart]=useState(false)
-
-  const showcartHandler =()=>{
-    setshowcart(true)
-  }
-  const deleteHandler =()=>{
-    setshowcart(false)
-  }
-
-  const items = productsArr.map(item=>(
-    <ul  >
-      <li style={{
-        marginRight: "10px",
-        padding: "10px",
-        float:'right'
-      }}>
-      <h4>{item.title}</h4>
-      <img src = {item.imageUrl} />
-      <p>price: {item.price}</p>
-
-    </li>
-    </ul>
-  ))
-  return(
-    
-    <div >
-
-      <ColorSchemesExample /> 
-      
-      <CartButton onClick = {showcartHandler}/>
-      {showcart && <CartElements onClick = {deleteHandler}/>}
-      <ul >{items}</ul>
-      
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="store" element={showCart ? <CartList /> : <Store />} />
+        <Route path="about" element={<About />} />
+      </Routes>
     </div>
-  )
-}
+  );
+};
 
 export default App;
