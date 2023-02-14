@@ -1,22 +1,30 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Cart } from "./CartContext";
 import "../App.css";
+import { Button } from "react-bootstrap";
 
 const CartList = () => {
   const [CART, setCART] = useState([]);
 
-  const {cart} = useContext(Cart);
+  const { cart } = useContext(Cart);
+  const removehandler =()=>{
+    setCART([])
+    
+  }
 
   useEffect(() => {
     setCART(cart);
   }, [cart]);
   return (
-    <div style={{float: "right"}}>
+    <div style={{ float: "right" }}>
+        
       {CART?.map((item, itemindex) => {
         return (
+
           <div>
-            <img src={item.imageUrl} width={40} />
-            <span>{item.title}</span>
+            
+            <img src={item.imageUrl} width={70} />
+            <span><h4>{item.title}</h4></span>
             <button
               onClick={() => {
                 const _CART = CART.map((item, index) => {
@@ -45,12 +53,12 @@ const CartList = () => {
             >
               +
             </button>
-            <span>Price: ${item.price * item.quantity}</span>
+            <span>Price: {item.price * item.quantity}</span>
           </div>
         );
       })}
       <p>
-        $ <span></span>
+        <b>Total Amount $ </b><span></span>
         {CART.map((item) => item.price * item.quantity).reduce(
           (total, value) => total + value,
           0

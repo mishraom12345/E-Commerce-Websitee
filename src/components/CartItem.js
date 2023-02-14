@@ -1,7 +1,7 @@
 export const CartitemList = [
     {
       id: 1,
-      title: "Colors",
+      title: "Album 1",
   
       price: 100,
   
@@ -13,7 +13,7 @@ export const CartitemList = [
     {
       id: 2,
   
-      title: "Black and white Colors",
+      title: "Album 2",
   
       price: 50,
   
@@ -25,7 +25,7 @@ export const CartitemList = [
     {
       id: 3,
   
-      title: "Yellow and Black Colors",
+      title: "Album 3",
   
       price: 70,
   
@@ -37,7 +37,7 @@ export const CartitemList = [
   
   export const productsArr = [
     {
-      title: "Colors",
+      title: "Album 1",
   
       price: 100,
   
@@ -45,7 +45,7 @@ export const CartitemList = [
     },
   
     {
-      title: "Black and white Colors",
+      title: "Album 2",
   
       price: 50,
   
@@ -53,7 +53,7 @@ export const CartitemList = [
     },
   
     {
-      title: "Yellow and Black Colors",
+      title: "Album 3",
   
       price: 70,
   
@@ -61,7 +61,7 @@ export const CartitemList = [
     },
   
     {
-      title: "Blue Color",
+      title:"Album 4",
   
       price: 100,
   

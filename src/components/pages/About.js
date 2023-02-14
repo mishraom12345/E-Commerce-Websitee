@@ -1,14 +1,31 @@
 import React from "react";
-// import Image1 from "../../assets/Image1.jpg";
+import Image1 from "../../image/ecomerce.jpg";
 import "../../App.css";
 
 const About = () => {
   return (
     <section>
-      <h2 className="a">About</h2>
-      <div className="text">
-        {/* <img src={Image1} alt="A music Image" /> */}
-        <p>
+       <div className="generic-section"><h1>The Generics</h1></div>
+      <h2
+        style={{
+          textAlign: "center",
+          color: "black",
+          fontSize: "70px",
+          fontStyle: "italic",
+          fontFamily: "Ink Free",
+        }}
+      >
+        About
+      </h2>
+      <div>
+        <div>
+          {" "}
+          <div style={{ textAlign: "center" }}>
+            {" "}
+            <img src={Image1} style={{ width: "40%" }} />
+          </div>
+        </div>
+        <p className="a">
           "Lorem ipsum carrots enhanced rebates. Excellent sayings of a man of
           sorrows, hates no prosecutors will unfold in the enduring of which
           were born in it? Often leads smallest mistake some pain main

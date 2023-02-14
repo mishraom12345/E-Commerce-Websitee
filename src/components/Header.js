@@ -11,7 +11,7 @@ const Header = (props) => {
   return (
     <>
     <div className="navBar" style={{padding:'10px'}}>
-      <Nav className="justify-content-center" activeKey="/home" >
+      <Nav className="justify-content-center" activeKey="/home" style={{padding:'2px'}} >
       <Link to="/home">HOME</Link>
       <span></span>
       <Link to="/store">STORE</Link>
@@ -19,7 +19,7 @@ const Header = (props) => {
       </Nav>
     </div>
     <div className="flex shopping-cart ">
-      <h4>Shopping Cart</h4>
+      <h4 style={{color:'green'}}>Shopping Cart</h4>
       <Button variant="success" onClick={() => props.handleShow(true)}>
         Cart
         <sup>{cart.length}</sup>
