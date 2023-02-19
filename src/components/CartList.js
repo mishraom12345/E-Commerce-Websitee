@@ -15,6 +15,12 @@ const CartList = () => {
   useEffect(() => {
     setCART(cart);
   }, [cart]);
+
+  const purchaseHandler =()=>{
+    alert('you order succesfully placed')
+    setCART([])
+    
+  }
   return (
     <div style={{ float: "right" }}>
         
@@ -63,6 +69,7 @@ const CartList = () => {
           (total, value) => total + value,
           0
         )}
+        {CART.length>0&& <Button onClick={purchaseHandler}>Purchase</Button>}
       </p>
     </div>
   );

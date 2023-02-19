@@ -79,7 +79,7 @@ justify-content: center;
 
 .a {
 text-align: center;
-padding: 10%;
+padding: 2%;
 margin: 5%;
 }
 
@@ -91,3 +91,28 @@ margin: 5%;
 .navbar-link {
   margin-right: 10px;
 }
+
+.generics-section {
+  background-color: gray;
+  padding: 20px;
+  
+}
+
+.generic-section h1 {
+  color: white;
+  font-size: 100px;
+  background-color: gray;
+  font-family: Segoe Print;
+  padding: 50px;
+  text-align: center;
+
+}
+.gap{
+  margin: 20px;
+}
+
+
+
+
+
+
