@@ -12,14 +12,16 @@ const Header = (props) => {
     <>
     <div className="navBar" style={{padding:'10px'}}>
       <Nav className="justify-content-center" activeKey="/home" style={{padding:'2px'}} >
-      <Link to="/home">HOME</Link>
-      <span></span>
-      <Link to="/store">STORE</Link>
-      <Link to="/about" onClick={() => props.handleShow(false)}>ABOUT</Link>
+      
+      <div style={{margin:'20px'}}><Link to="/home">HOME</Link></div>
+      <div style={{margin:'20px'}}><Link to="/store">STORE</Link></div>
+      <div style={{margin:'20px'}}><Link to="/about" onClick={() => props.handleShow(false)}>ABOUT</Link></div>
+      <div style={{margin:'20px'}}><Link to ='/ContactUs'>Contact Us</Link></div>
+      <div style={{margin:'20px'}}><Link to ='/login'>Log In</Link></div>
       </Nav>
     </div>
     <div className="flex shopping-cart ">
-      <h4 style={{color:'green'}}>Shopping Cart</h4>
+      <h4 style={{color:'green',fontFamily:'Segoe Print'}}>Shopping Cart</h4>
       <Button variant="success" onClick={() => props.handleShow(true)}>
         Cart
         <sup>{cart.length}</sup>
