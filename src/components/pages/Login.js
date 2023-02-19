@@ -1,11 +1,13 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
+import AuthContext from '../store/AuthContext';
 
 
 
 function Login() {
+    const authCtx = useContext(AuthContext)
     const history = useNavigate() 
     const emailInputref = useRef()
     const passwordInputref = useRef()
@@ -40,8 +42,10 @@ function Login() {
                 })
             }
         }).then((data)=>{
-            
+            authCtx.Login(data.idToken)
+            localStorage.setItem('token',data.idToken)
             console.log(data.idToken)
+
             
             localStorage.setItem('token',data.idToken)
             history('/store')

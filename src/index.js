@@ -4,14 +4,15 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import CartContext from "./components/CartContext";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import { AuthContextProvider } from "./components/store/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
- 
-   <BrowserRouter>
-     <CartContext>
-      <App />
-    </CartContext>
-   </BrowserRouter>
- 
+  <BrowserRouter>
+    <AuthContextProvider>
+      <CartContext>
+        <App />
+      </CartContext>
+    </AuthContextProvider>
+  </BrowserRouter>
 );
