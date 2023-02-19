@@ -7,8 +7,11 @@ import Table from 'react-bootstrap/Table';
 function Home() {
 
   return (
-    <div style={{textAlign:'center'}}>
+    <div>
         <div className="generic-section"><h1>The Generics</h1></div>
+        
+        <div className="a">
+        
         <h1 style={{fontFamily:'Comic Sans MS',textAlign:'center'}}>TOURS</h1>
         <Table striped bordered hover>
       <thead>
@@ -17,6 +20,7 @@ function Home() {
           <th>Date</th>
           <th>Place</th>
           <th>Event</th>
+          <th>Buy</th>
         </tr>
       </thead>
       <tbody>
@@ -72,6 +76,7 @@ BUDWEISER STAGE</td>
       </tbody>
     </Table>
         
+    </div>
     </div>
   );
 }
