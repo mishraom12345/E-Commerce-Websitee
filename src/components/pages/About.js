@@ -1,6 +1,7 @@
 import React from "react";
 import Image1 from "../../image/ecomerce.jpg";
 import "../../App.css";
+import Footer from "../Footer/Footer";
 
 const About = () => {
   return (
@@ -49,6 +50,7 @@ const About = () => {
           are accusing him? Him whom something large cisterns."
         </p>
       </div>
+      
     </section>
   );
 };

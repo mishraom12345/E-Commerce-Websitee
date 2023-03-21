@@ -3,6 +3,7 @@ import { Container,Button } from "react-bootstrap";
 
 
 import Table from 'react-bootstrap/Table';
+import Footer from "../Footer/Footer";
 
 function Home() {
 
@@ -75,7 +76,7 @@ BUDWEISER STAGE</td>
         </tr>
       </tbody>
     </Table>
-        
+     
     </div>
     </div>
   );

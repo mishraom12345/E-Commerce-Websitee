@@ -22,16 +22,19 @@ const Store = () => {
                 </div>
               </Link>
               <p>Price: ${item.price}</p>
-              <Button className="button" onClick={() => addToCart(item)}>
+              <Button className="button" onClick={() => addToCart(item.id)}>
                 Add to Cart
               </Button>
               
             </div>
+           
           </div>
           
         );
       })}
+      
     </div>
+    
   );
 };
 

@@ -2,12 +2,16 @@ import React, { useEffect, useState, useContext } from "react";
 import { Cart } from "./CartContext";
 import "../App.css";
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import "./cartList.css"; // Import the CSS file here
 
 const CartList = () => {
+  const history = useNavigate()
   const [CART, setCART] = useState([]);
 
-  const { cart } = useContext(Cart);
+  const { cart,handlePurchase } = useContext(Cart);
   const removehandler =()=>{
+
     setCART([])
     
   }
@@ -18,19 +22,17 @@ const CartList = () => {
 
   const purchaseHandler =()=>{
     alert('you order succesfully placed')
-    setCART([])
-    
+    handlePurchase()
+    history('/')
   }
+
   return (
-    <div style={{ float: "right" }}>
-        
+    <div className="cart-container">
       {CART?.map((item, itemindex) => {
         return (
-
-          <div>
-            
+          <div className="cart-item" key={itemindex}>
             <img src={item.imageUrl} width={70} />
-            <span><h4>{item.title}</h4></span>
+            <h4>{item.title}</h4>
             <button
               onClick={() => {
                 const _CART = CART.map((item, index) => {
@@ -59,18 +61,19 @@ const CartList = () => {
             >
               +
             </button>
-            <span>Price: {item.price * item.quantity}</span>
+            <span className="price">Price: {item.price * item.quantity}</span>
           </div>
         );
       })}
-      <p>
+      <p style={{fontSize:'30px'}}>
         <b>Total Amount $ </b><span></span>
         {CART.map((item) => item.price * item.quantity).reduce(
           (total, value) => total + value,
           0
         )}
-        {CART.length>0&& <Button onClick={purchaseHandler}>Purchase</Button>}
+       {CART.length>0&& <Button onClick={purchaseHandler} style = {{float:'right'}}>Purchase</Button>} 
       </p>
+      
     </div>
   );
 };

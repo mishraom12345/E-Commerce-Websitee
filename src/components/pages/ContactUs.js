@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Footer from '../Footer/Footer';
 function ContactUs() {
   const nameRef=useRef('')
   const emailRef=useRef('')
@@ -16,12 +17,14 @@ function ContactUs() {
     }
     console.log(data)
 
-     fetch('https://ecomerce-website-contactus-default-rtdb.firebaseio.com/contactInfo.json',{
+     fetch(`https://ecommerce-authentication-20988-default-rtdb.firebaseio.com/contactInfo/${localStorage.getItem('xyz')}.json`,{
       method:'POST',
       body:JSON.stringify(data),
       headers:{
         'Content-Type':'application/json'
       }
+
+      
 
      
 
